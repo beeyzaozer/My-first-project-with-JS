@@ -18,9 +18,6 @@ clear.addEventListener("click", clearAllTodos);
 //button.addEventListener("click", questionToTodo);
 }
 
-
-
-
 function filterTodos(e) {
 const  filterValue = e.target.value.toLowerCase();
 const listItems = document.querySelectorAll(".list-group-item");
@@ -77,8 +74,7 @@ function existsTodo(newTodo) {
     const todos = getTodosFromStorage();
     return todos.find(todo => todo === newTodo);
 }
-
-    function addTodo(e) {
+function addTodo(e) {
         const newTodo = todoInput.value.trim();
         if(newTodo){
                const result = existsTodo(newTodo);
@@ -103,8 +99,7 @@ function existsTodo(newTodo) {
 
 
   
-
-    function getTodosFromStorage(){//Storagedan todoları alma
+function getTodosFromStorage(){//Storagedan todoları alma
         let todos;
         if(localStorage.getItem("todos") === null){
             todos = [];
@@ -114,12 +109,12 @@ function existsTodo(newTodo) {
         }
         return todos;
     }
-    function addTodoToStorage(newTodo) {
+function addTodoToStorage(newTodo) {
         let todos =  getTodosFromStorage(); //storagedan alınan todoları çağırma 
         todos.push(newTodo);
         localStorage.setItem("todos" , JSON.stringify(todos));
      }
-    
+
 function showAlert(type,message) {
     const alert = document.createElement("div");
 
